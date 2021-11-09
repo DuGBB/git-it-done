@@ -14,4 +14,4 @@ var getUserRepos = function(user) {
     //console.log(response);
 
 
-getUserRepos("dugbb");
+getUserRepos();

@@ -13,7 +13,7 @@ var getFeaturedRepos = function(language) {
         alert('Error: GitHub User Not Found');
       }
     });
-  }
+  };
 
 var getUserRepos = function(user) {
 

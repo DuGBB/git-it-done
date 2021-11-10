@@ -2,9 +2,18 @@ var issueContainerEl = document.querySelector("#issues-container");
 var limitWarningEl = document.querySelector("#limit-warning");
 var repoNameEl = document.querySelector("#repo-name");
 
-var getRepoName = function(repo) {
+var getRepoName = function() {
     var queryString = document.location.search;
     var repoName = queryString.split("=")[1];
+
+    if (repoName) {
+        repoNameEl.textContent = repoName;
+
+        getRepoIssues(repoName);
+    } else {
+        document.location.replace("./index.html");
+    }
+
     getRepoIssues(repoName);
     repoNameEl.textContent = repoName;
 }
@@ -23,10 +32,10 @@ var getRepoIssues = function(repo) {
             });
         }
         else {
-            alert("There was a problem with you request!");
+            document.location.replace("./index.html");
         }
     });
-    // var username = nameInputEl.value.trim();
+   
     var repoName = getRepoNameEl.value;
 
 }
